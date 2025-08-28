@@ -1,0 +1,102 @@
+{
+    "centroids": {
+        "0": [
+            0.2446332698597421,
+            0.5468729406043656
+        ],
+        "1": [
+            0.038993230688826507,
+            0.47883585303441906
+        ],
+        "2": [
+            0.11262157125613134,
+            0.37016805694266053
+        ],
+        "3": [
+            0.4891650681423879,
+            0.6627821112676144
+        ],
+        "4": [
+            0.12634548605259638,
+            0.6494430086897416
+        ],
+        "5": [
+            0.03987547011415387,
+            0.5615912585973482
+        ],
+        "6": [
+            0.46276131082263594,
+            0.7300333874070558
+        ],
+        "7": [
+            0.04379587917141193,
+            0.5885648851298702
+        ]
+    },
+    "closest_emails": {
+        "0": {
+            "from": "Sara Doyle <sara.doyle@russell-knight.info>",
+            "to": "Jennifer Mclaughlin <jennifer.mclaughlin@landry.info>",
+            "subject": "Exciting Updates and Upcoming Match Details for the South Cassandratown Whirlwinds!",
+            "body": "Hey Jennifer,\n\nI hope this email finds you well, although Im sure youre just thrilled to be reading yet another update about our beloved local sports team. I mean, who wouldnt want to know every little detail about a group of individuals running around chasing a ball, right? \n\nSo, heres the latest scoop from the South Cassandratown Whirlwinds. I know youve been on the edge of your seat waiting for this. Last week, they managed to pull off a stunning victory against the Christopherton Crushers, and by stunning, I mean they finally remembered which direction to run in. Its a miracle, really. The final score was a nailbiting 32, which Im sure is just as riveting to you as watching paint dry.\n\nIn more exciting news, the team is gearing up for their next match on January 3rd at Jackson and Sons Hall. I can barely contain my excitement! Ive attached the flyer for the event, which Im sure youll want to print out and hang on your fridge. Because, you know, who doesnt want to be reminded of local sports events while theyre eating breakfast?\n\nAnd just a quick reminder our teams mascot, Benny the Bouncing Bird, will be making a special appearance. I know how much you adore that oversized feathered creature. Just dont forget your camera those selfies will surely be the highlight of your year. \n\nAlso, its worth mentioning that the teams merchandise is on salebecause nothing says I support my local team like overpriced hoodies and caps that youll wear once and then tuck away in the back of your closet. Dont you just love a good impulse buy?\n\nAnyway, Im sure you can hardly wait for the next riveting installment of the Whirlwinds saga. Enjoy the snowy weather while you await the next thrilling update.\n\nYours in sarcasm,\n\nSara Doyle  \nProud South Cassandratown Whirlwinds Fan  \nsara.doyleknight.info  \nP.S. If youre looking for a new hobby, maybe you could join the team as a cheerleader. I hear theyre really in need of some enthusiasm!",
+            "polarity": 0.24327774498229046,
+            "subjectivity": 0.5452151383969567
+        },
+        "1": {
+            "from": "Joyce Leblanc <joyce.leblanc@campbell-smith.com>",
+            "to": "Charles Hahn <charles.hahn@jimenez.com>",
+            "subject": "Exciting Discoveries in Our Forgotten Kingdom Genealogical Studies!",
+            "body": "Hey Charles,\n\nI hope this email finds you well and not buried under mountains of paperwork! I wanted to follow up on our last discussion about the Forgotten Kingdom Genealogical Studies. It seems that delving into our ancestral roots has a way of making the mundane feel like a thrilling adventurewho knew greatgreatgrandpa was a pirate? Or at least thats what Im hoping for!\n\nIve been sifting through some old family records and came across a few intriguing tidbits that might just add some flair to our project. Ive attached a document with my findings, complete with family trees, bizarre names seriously, who names their kid Thaddeus?, and some speculative connections that could lead us closer to unveiling the mysteries of our lineage. \n\nAlso, I was wondering if youve had the chance to check out any of those online databases we discussed. The ones that promise they can trace our family trees back to the dawn of time? I mean, can you imagine finding out were actually related to royalty? Id like to think that would mean I could wear a crown, but Ill settle for a nice coffee mug that says Im a genealogical genius for now.\n\nLet me know when youd like to meet up and discuss this further. Im ready to dive deeper into the rabbit hole of our forgotten kingdom!\n\nBest wishes,  \nJoyce Leblanc  \nP.S. Say hi to Stacy for me! I can only imagine the shenanigans shes up to while Im buried in historical documents!",
+            "polarity": 0.038095238095238106,
+            "subjectivity": 0.47976190476190483
+        },
+        "2": {
+            "from": "Michael Lewis <michael.lewis@johnson.net>",
+            "to": "Kathleen Smith <kathleen.smith@castaneda-grant.info>",
+            "subject": "Urgent Discussion Needed",
+            "body": "Hello Kathleen,\n\nI hope this message finds you well, though I must admit, Im not sure how much optimism I can muster given the current state of our supply chain. Its almost as if were living in an alternate universe where efficiency is a myth and delays reign supreme. \n\nAs we dive deeper into the project on Supply Chain Optimization Using AI, I cant help but ponder the effectiveness of our current strategies. If we truly want to make a dent in the inefficiencies plaguing our operations, we need to move beyond the usual fluff and start implementing real, actionable solutions. The clock is ticking, and I hope we can count on everyone to step up.\n\nIve attached a document outlining some bold ideas to consider. Lets aim for a discussion that doesnt just skim the surface but tackles the core issues headon. I look forward to hearing your thoughts.\n\nBest,  \nMichael Lewis  \nTherapist, Sports  \nHatfield, Walker and Coleman  \nmichael.lewis.net  \n",
+            "polarity": 0.11333333333333333,
+            "subjectivity": 0.3705555555555555
+        },
+        "3": {
+            "from": "Kevin Donaldson <kevin.donaldson@holmes-griffin.com>",
+            "to": "Sean Taylor <sean.taylor@rodriguez-odom.com>",
+            "subject": "Exploring the Mysteries of Atlantis",
+            "body": "Dear Sean,\n\nI hope this message finds you well! I wanted to share some exciting insights about the ongoing theories surrounding the reconstruction of Atlantis. As we dive deeper into this fascinating topic, its amazing to see how many perspectives there are on what this mythical civilization could have looked like.\n\nIts encouraging to know that young minds like yours are exploring these ideas. The theories range from advanced engineering feats to unique ecological systems. I believe that your curiosity and creativity can contribute significantly to discussions in this area. Perhaps you could even share your thoughts on how technology today could help us recreate ancient wonders!\n\nIve attached some interesting articles and diagrams that lay out various theories, which I think youll find engaging. Let me know your thoughts after you take a look!\n\nKeep up the great work, and dont hesitate to reach out if you want to brainstorm ideas together!\n\nBest regards,\n\nKevin Donaldson  \nPsychologist, Clinical  \nHolmesGriffin Consulting  \nkevin.donaldsongriffin.com  \n33 324 244 3328x728",
+            "polarity": 0.4888392857142857,
+            "subjectivity": 0.6625
+        },
+        "4": {
+            "from": "David Gregory <david.gregory@aguirre-mcbride.org>",
+            "to": "Leonard Escobar <leonard.escobar@escobar-webster.biz>",
+            "subject": "Urgent",
+            "body": "Dear Leonard,\n\nI hope this message finds you well. I am writing to inform you of a recent incident that has come to our attention at FloresDavis, which may impact you as a valued partner of our organization. \n\nOn November 15, 2023, we discovered a potential data breach that may have exposed some sensitive information. While we are still investigating the exact nature and scope of the breach, we want to ensure transparency and keep you informed about the situation. At this time, we believe that certain details related to project communications and corporate data may have been accessed.\n\nWe are taking this matter very seriously and have engaged cybersecurity experts to assist us in addressing the breach and mitigating any potential risks. In the meantime, we strongly recommend that you take precautionary measures, such as changing passwords and monitoring your accounts for any unusual activity.\n\nPlease find attached a detailed report outlining the incident, our response measures, and tips for enhancing your data security. We understand the potential impact this situation may have and are committed to resolving it as swiftly and effectively as possible.\n\nIf you have any questions or need further clarification, please do not hesitate to reach out. Your partnership is invaluable to us, and we appreciate your understanding as we navigate this challenge.\n\nBest regards,\n\nDavid Gregory  \nRadio Broadcast Assistant  \nFloresDavis  \ndavid.gregorymcbride.org  \n0019539883786x58622  \nLinkedIn Profile",
+            "polarity": 0.1273109243697479,
+            "subjectivity": 0.6483193277310925
+        },
+        "5": {
+            "from": "Joseph Sims <joseph.sims@merritt-reed.com>",
+            "to": "Dennis Molina <dennis.molina@jimenez.net>",
+            "subject": "Planning Our Memorable Family Reunion",
+            "body": "Hey Dennis,\n\nHope youre doing well and managing to stay dry in this rainy weather. I just wanted to shoot you a quick note about our upcoming family reunion. I mean, how long has it been since we all gathered? Ages, right? Im thinking we should really make this one a memorable shindig.\n\nSo, heres the deal Ive got some ideas brewing in my head  the kind of wild and crazy plans thatll make us laugh, cringe, and maybe even cry happy tears, of course. I was thinking we could set up a themed potluck. You know, everyone brings a dish that represents their current mood or a wild story from the past year. I can already picture Aunt Lindas Imtryingtobehealthy salad next to Uncle Joes IjustgotbackfromVegas casserole. \n\nAlso, how about we rent a space at that community center or maybe set up a picnic at the local park if the weather permits? I mean, who wouldnt want to have a giant family picnic with questionable food choices and an impromptu karaoke session? I can even bring my trusty Bluetooth speaker, and we can belt out some classics. Just imagine Grandma trying to sing Bohemian Rhapsody. Priceless.\n\nLet me know when youre free to chat about this. Ill also attach a rough draft of the invitation I whipped up. Its a little ridiculous, and I think thats just what we need to kick things off!\n\nLooking forward to hearing your thoughts!\n\nCatch you later,\n\nJoseph Sims  \nFamily Reunion Enthusiast and Karaoke Champion  \njoseph.simsreed.com",
+            "polarity": 0.03996598639455782,
+            "subjectivity": 0.5628826530612245
+        },
+        "6": {
+            "from": "Christopher Raymond <christopher.raymond@gomez.com>",
+            "to": "Eric Owens <eric.owens@jones.org>",
+            "subject": "Urgent Payment Confirmation Needed for Your Exciting Shopping Spree!",
+            "body": "Dear Esteemed Customer,\n\nWe hope this message finds you in a whirlwind of excitement! It appears that your recent shopping spree has led to an urgent matter that requires your immediate attention. Yes, you guessed it  its time to confirm your payment for that carefully curated selection of items youve been eyeing!\n\nAttached to this email, you will find all the necessary paperwork, including your invoice and a delightful offer for a surprise gift that will make your purchase even more thrilling! But beware, this fabulous opportunity is fleeting you must act NOW to secure your treasures!\n\nWhy wait? Click the attachment, confirm your payment, and revel in the joy of your new acquisitions! Remember, the clock is ticking, and you wouldnt want to miss out on this onceinalifetime deal. Your wallet will thank you, and your friends will be envious of your impeccable taste!\n\nDont delay  confirm your payment today and watch as your shopping dreams come to life!\n\nYours in delightful urgency,\n\nThe Amused Sales Team",
+            "polarity": 0.4631628787878788,
+            "subjectivity": 0.7295454545454545
+        },
+        "7": {
+            "from": "Eric Lozano <eric.lozano@carey.net>",
+            "to": "John James <john.james@matthews-farley.com>",
+            "subject": "Mastering Warlord Negotiation Techniques with a Side of Humor and Snacks!",
+            "body": "Hey John,\n\nI hope this email finds you in a fortress of snacks and a moat full of soda! As we dive into the thrilling world of Warlord Territory Negotiation Techniques, I wanted to share some insights that I promise will be more entertaining than watching paint dry on a medieval castle wall.\n\nNow, picture this youre at the negotiation table, and youre not just any negotiator youre the Warlord of Snackistan, armed with a shield made of nachos and a sword thats actually a giant pretzel. The key to securing your territory? A solid strategy paired with a touch of humor!\n\nFirst off, establish your territory by throwing snacks like confetti. Nothing says I mean business like a welltimed potato chip shower. When it comes to negotiating, remember that laughter is your secret weapon. If you cant make them chuckle, you might as well hand over your chocolate stash.\n\nNext, always present your demands with a flair! I demand the highest mountain of gummy bears, or I shall unleash the wrath of my goldfish army! Yes, Im talking about Rebecca shes fierce, especially when it comes to snacks!\n\nAnd lets not forget the classic technique of the Dramatic Pause. After laying down your demands, pause dramatically while taking a sip from your goblet of grape juice. Ensure everyone in the room is on the edge of their seats, wondering if youll unleash your ultimate power move the gummy bear catapult!\n\nIve attached a hilarious infographic that details these techniques further. Trust me its worth a look! If it doesnt make you laugh, Ill personally send you a lifetime supply of my infamous homemade brownies which might need a negotiation of their own.\n\nLets prepare for our next negotiation session with this newfound wisdom. Ill bring the snacks, and you bring the humor  together well conquer the world, one delicious bite at a time!\n\nStay snacktastic,\n\nEric Lozano  \nChief Warlord of Negotiations and Snack Supplies  \neric.lozano.net  \n  \n\nP.S. If you ever need backup, just whistle! Ill come running with a pretzel sword and a bag of gummy bears!",
+            "polarity": 0.04471326164874552,
+            "subjectivity": 0.5879480286738351
+        }
+    }
+}
