@@ -1,159 +1,109 @@
-Email Security Analytics Pipeline
-A modular Python pipeline for ingesting raw email artifacts, extracting indicators, enriching with threat intelligence, classifying phishing/malware campaigns, and producing analyst-ready reports and alerts.
+# Email Security Analytics Pipeline
 
-Features
-MIME/EML ingestion with header/body/attachment parsing for large batches of messages.
+A modular Python pipeline for ingesting raw email artifacts, extracting indicators, enriching with threat intelligence, classifying phishing/malware campaigns, and producing analyst‑ready reports and alerts.
 
-Indicator extraction: URLs, domains, IPs, hashes, senders, DKIM/SPF/DMARC signals.
+## Features
+- MIME/EML ingestion with header, body, and attachment parsing for large batches of messages.
+- Indicator extraction: URLs, domains, IPs, hashes, senders, and DKIM/SPF/DMARC signals.
+- Threat‑intelligence enrichment via pluggable providers (HTTP API adapters, local reputation lists).
+- Rule and ML‑based detection for phishing, BEC, malware‑linked URLs, and spoofing patterns.
+- Config‑driven pipeline stages to enable or disable modules without code changes.
+- Alerting and reporting to JSON/CSV with optional webhook or email notifications.
 
-Threat intel enrichment via pluggable providers (HTTP API adapters, local reputation lists).
+## Architecture
+- **Ingestion:** Reads `.eml`/`.msg` or raw RFC822 from folders or stdin and normalizes to structured records.
+- **Parsing & Extraction:** Splits headers, body, and attachments; extracts indicators and email‑auth results.
+- **Enrichment:** Queries threat‑intelligence sources and caches repeated IOCs.
+- **Detection:** Applies signature rules plus an optional classifier; assigns severity and categories.
+- **Output:** Writes events, IOCs, and alerts to `out/` as JSON/CSV; can forward to a webhook.
 
-Rule and ML-based detection for phishing, BEC, malware-linked URLs, and spoofing patterns.
+## Getting Started
 
-Alerting and reporting to JSON/CSV, with optional webhook/email notifications.
+### Prerequisites
+- Python 3.10+ and pip
+- Optional: virtualenv or venv for isolated installs
 
-Config-driven pipeline stages to enable/disable modules without code changes.
+### Setup
+git clone https://github.com/PrathamBhavsar2112/email-security-analytics-pipeline.git
+cd email-security-analytics-pipeline
+python -m venv venv
+source venv/bin/activate # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
 
-Architecture
-Ingestion: reads .eml/.msg or raw RFC822 from a folder or stdin and normalizes to structured records.
+text
 
-Parsing & Extraction: splits headers/body/attachments; extracts indicators and email-auth results.
+Place sample `.eml` files under `data/input/` and run the pipeline.
 
-Enrichment: queries TI sources; caches results for repeated IOCs.
+## Configuration
+`config.yaml` controls input paths, enabled modules, enrichment providers, thresholds, and output locations.
 
-Detection: applies signature rules plus an optional classifier; assigns severity and categories.
-
-Output: writes events, IOCs, and alerts to out/ as JSON/CSV; can forward to a webhook.
-
-Getting Started
-Prerequisites:
-
-Python 3.10+ and pip.
-
-Optional: virtualenv or venv for isolated installs.
-
-Setup:
-
-Clone the repository and create a virtual environment, then install dependencies (add to requirements.txt as needed).
-
-Example:
-
-Place sample .eml files under data/input/ and run the pipeline to produce outputs in out/.
-
-Configuration
-config.yaml controls input paths, enabled modules, enrichment providers, thresholds, and output locations.
-
-Secrets (API keys) should be provided via environment variables or a .env file ignored by VCS.
-
-Sample settings:
+Secrets (API keys) should be provided via environment variables or a `.env` file ignored by version control.
 
 input_dir: data/input/
-
 output_dir: out/
-
 enrichment:
-
 urlscan:
 enabled: true
 api_key: ${URLSCAN_API_KEY}
-
 virustotal:
 enabled: false
-
 detection:
-
 ruleset: rules/phishing.yml
+min_score: 0.6
 
-min_score: 0.6.
+text
 
-Usage
+## Usage
+
 Process a directory:
+python -m pipeline.run --config config.yaml --input data/input --output out
 
-python -m pipeline.run --config config.yaml --input data/input --output out.
+text
 
-Single file:
+Process a single file:
+python -m pipeline.run --file data/input/sample.eml
 
-python -m pipeline.run --file data/input/sample.eml.
+text
 
 Enable debug logs:
+python -m pipeline.run --config config.yaml --log-level DEBUG
 
-python -m pipeline.run --config config.yaml --log-level DEBUG.
+text
 
-Outputs:
+## Outputs
+- `out/events.jsonl` — normalized per‑message events
+- `out/iocs.csv` — aggregated indicators (URL, domain, IP, hash, first_seen, sources)
+- `out/alerts.json` — detections with severity, rule/model hits, and evidence excerpts
 
-out/events.jsonl — normalized per-message events.
+## Detection Logic
+- **Rules:** YAML rules matching header anomalies, suspicious TLDs, look‑alike senders, and URL patterns
+- **ML (optional):** Text/URL features for a binary phishing score
+- **Email Auth:** DKIM/SPF/DMARC parsing to flag spoofing and alignment failures
 
-out/iocs.csv — aggregated indicators (url, domain, ip, hash, first_seen, sources).
+## Extending
+- Add a new enrichment provider by implementing `EnricherBase` and registering it in `config.yaml`.
+- Add detection rules in `rules/*.yml`; each rule defines conditions, score, and tags.
+- Implement new output sinks by subclassing `WriterBase` (e.g., SIEM webhook).
 
-out/alerts.json — detections with severity, rule/model hits, and evidence excerpts.
+## Data Model
+- **Event fields:** `message_id`, `date`, `from`, `reply_to`, `subject`, `dmarc`, `spf`, `dkim`, `urls[]`, `attachments[]`, `sha256[]`, `verdict`, `score`
+- **IOC fields:** `type`, `value`, `first_seen`, `last_seen`, `sources[]`, `severity`, `tags[]`
 
-Detection Logic
-Rules: YAML rules that match header anomalies, suspicious TLDs, look‑alike senders, and URL patterns.
+## Testing
+pytest -q
 
-ML (optional): simple text/URL features (brand terms, obfuscation, shortening, IP URLs) for a binary phishing score.
+text
+A sample corpus in `data/samples/` should contain benign and phishing examples; expected alerts can live under `tests/fixtures`.
 
-Email auth: DKIM/SPF/DMARC parsing to flag spoofing and alignment failures.
+## Security
+- Do not commit API keys; use environment variables or a `.env` file.
+- Validate and sanitize untrusted MIME and attachments to avoid parser exploits.
 
-Extending
-Add a new enrichment provider by implementing EnricherBase and registering it in config.yaml.
+## Roadmap
+- Add sandbox detonation metadata ingestion
+- Integrate DMARC aggregate feedback parsing
+- Export to STIX 2.1 and TAXII clients
+- Optional stream‑processor mode with a message queue
 
-Add detection rules in rules/*.yml; each rule defines conditions, score, and tags.
-
-Implement new output sinks by subclassing WriterBase (e.g., send to SIEM webhook).
-
-Data Model
-Core event fields (example):
-
-message_id, date, from, reply_to, subject, dmarc, spf, dkim, urls[], attachments[], sha256[], verdict, score.
-
-IOC fields:
-
-type, value, first_seen, last_seen, sources[], severity, tags[].
-
-Testing
-Unit tests: run pytest -q.
-
-Sample corpus: data/samples/ contains benign and phishing examples; expected alerts under tests/fixtures.
-
-Operational Guidance
-Batch size and backoff for TI APIs are configurable; enable local caching to minimize rate limits.
-
-Treat network enrichment as best-effort; detections should still function offline using rules.
-
-Sanitize and redact PII when exporting sharable reports.
-
-Roadmap
-Add sandbox detonation metadata ingestion (e.g., URL/attachment behavior).
-
-Integrate DMARC aggregate feedback parsing.
-
-Export to STIX 2.1 and TAXII clients.
-
-Optional stream processor mode with a message queue.
-
-Repository Structure
-pipeline/
-
-ingest.py, parse.py, extract.py, enrich/, detect/, output/.
-
-rules/
-
-config.yaml
-
-data/input/, out/
-
-tests/.
-
-Security
-Do not commit API keys; prefer environment variables and .env in .gitignore.
-
-Validate and sanitize untrusted MIME and attachments before processing to avoid parser exploits.
-
-License
-Choose a license (e.g., MIT or Apache-2.0) and include LICENSE in the repository root.
-
-Contributing
-Open an issue with proposed changes; submit PRs with tests and documentation updates.
-
-Acknowledgments
-Inspired by common threat-intel and email-security pipelines and standard README guidance for clarity and setup flow.
+## License
+Choose a license (MIT, Apache‑2.0, etc.) and include a `LICENSE` file in the reposito
