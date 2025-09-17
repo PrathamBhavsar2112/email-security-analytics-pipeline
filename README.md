@@ -24,13 +24,14 @@ A modular Python pipeline for ingesting raw email artifacts, extracting indicato
 - Optional: virtualenv or venv for isolated installs
 
 ### Setup
+```
 git clone https://github.com/PrathamBhavsar2112/email-security-analytics-pipeline.git
 cd email-security-analytics-pipeline
 python -m venv venv
 source venv/bin/activate # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-text
 
 Place sample `.eml` files under `data/input/` and run the pipeline.
 
@@ -39,6 +40,7 @@ Place sample `.eml` files under `data/input/` and run the pipeline.
 
 Secrets (API keys) should be provided via environment variables or a `.env` file ignored by version control.
 
+```
 input_dir: data/input/
 output_dir: out/
 enrichment:
@@ -50,25 +52,26 @@ enabled: false
 detection:
 ruleset: rules/phishing.yml
 min_score: 0.6
-
-text
+```
 
 ## Usage
 
 Process a directory:
+```
 python -m pipeline.run --config config.yaml --input data/input --output out
-
-text
+```
 
 Process a single file:
-python -m pipeline.run --file data/input/sample.eml
 
-text
+```
+python -m pipeline.run --file data/input/sample.eml
+```
+
 
 Enable debug logs:
+```
 python -m pipeline.run --config config.yaml --log-level DEBUG
-
-text
+```
 
 ## Outputs
 - `out/events.jsonl` — normalized per‑message events
@@ -90,9 +93,10 @@ text
 - **IOC fields:** `type`, `value`, `first_seen`, `last_seen`, `sources[]`, `severity`, `tags[]`
 
 ## Testing
+```
 pytest -q
+```
 
-text
 A sample corpus in `data/samples/` should contain benign and phishing examples; expected alerts can live under `tests/fixtures`.
 
 ## Security
